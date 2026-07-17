@@ -1,0 +1,61 @@
+---
+const currentProjects = [
+  {
+    label: 'Current build',
+    title: 'Secure CI/CD Starter',
+    summary:
+      'Reusable GitHub Actions workflow for app tests, dependency audit, secret scanning, IaC scanning, container image scanning, and SBOM generation.',
+    href: 'https://github.com/RachelKhoza/secure-cicd-starter',
+    stack: ['GitHub Actions', 'Gitleaks', 'Checkov', 'Trivy', 'Syft', 'Docker'],
+  },
+  {
+    label: 'Current lab',
+    title: 'SonarQube + Trivy DevSecOps Lab',
+    summary:
+      'Local Jenkins and SonarQube lab with a sample Node service, quality gate, Docker image build, Trivy scan, and remediation notes.',
+    href: 'https://github.com/RachelKhoza/sonarqube-trivy-devsecops-lab',
+    stack: ['Jenkins', 'SonarQube', 'Trivy', 'Docker', 'Node.js'],
+  },
+];
+---
+
+<section id="current-projects" class="container-page py-20 border-t border-ink-800/60">
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
+    <div>
+      <p class="section-eyebrow">// current projects</p>
+      <h2 class="section-heading mb-3">What I'm building now.</h2>
+      <p class="text-ink-300 max-w-2xl">
+        Active public DevOps and DevSecOps projects with working code, pipeline examples, and GitHub history.
+      </p>
+    </div>
+    <a href="https://github.com/RachelKhoza?tab=repositories" target="_blank" rel="noopener" class="btn-ghost self-start md:self-auto">
+      View all GitHub repos
+    </a>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-5">
+    {currentProjects.map((project) => (
+      <article class="card group flex flex-col">
+        <p class="font-mono text-xs text-accent uppercase tracking-wider mb-3">{project.label}</p>
+        <h3 class="text-2xl font-semibold text-ink-50 mb-3 group-hover:text-accent transition">
+          {project.title}
+        </h3>
+        <p class="text-sm text-ink-300 leading-relaxed flex-1 mb-5">{project.summary}</p>
+        <div class="flex flex-wrap gap-1.5 mb-5">
+          {project.stack.map((item) => <span class="chip">{item}</span>)}
+        </div>
+        <a
+          href={project.href}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-1.5 text-xs font-mono text-accent hover:translate-x-1 transition"
+        >
+          Open on GitHub
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </article>
+    ))}
+  </div>
+</section>
