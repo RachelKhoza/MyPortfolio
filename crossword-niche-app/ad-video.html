@@ -1,0 +1,1419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Niche Crosswords Promo</title>
+    <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #07090c;
+        --ink: #f8fffb;
+        --muted: #a4b5b0;
+        --cyan: #23e0bd;
+        --amber: #f7bd55;
+        --violet: #a78bfa;
+        --green: #8fe96f;
+        --red: #ff655f;
+        --line: rgba(35, 224, 189, 0.32);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background:
+          linear-gradient(135deg, rgba(35, 224, 189, 0.13), transparent 34%, rgba(247, 189, 85, 0.1)),
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          var(--bg);
+        background-size: auto, 54px 54px, 54px 54px;
+        color: var(--ink);
+        overflow: hidden;
+      }
+
+      .studio {
+        display: grid;
+        gap: 0.75rem;
+        width: min(100vw, 520px);
+        padding: 0.75rem;
+      }
+
+      .stage {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(145deg, rgba(35, 224, 189, 0.1), transparent 34%, rgba(167, 139, 250, 0.08)),
+          #090d11;
+        box-shadow: 0 34px 90px rgba(0, 0, 0, 0.46);
+        isolation: isolate;
+      }
+
+      .stage::before {
+        position: absolute;
+        inset: auto -30% 0;
+        height: 38%;
+        content: "";
+        background:
+          linear-gradient(rgba(35, 224, 189, 0.22) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(35, 224, 189, 0.18) 1px, transparent 1px);
+        background-size: 36px 36px;
+        transform: perspective(560px) rotateX(62deg);
+        transform-origin: bottom center;
+        opacity: 0.62;
+      }
+
+      .brand {
+        position: absolute;
+        top: 5%;
+        left: 7%;
+        right: 7%;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        z-index: 4;
+        animation: brandIn 24s linear infinite;
+      }
+
+      .brand img {
+        width: 3.15rem;
+        height: 3.15rem;
+        filter: drop-shadow(0 0 20px rgba(35, 224, 189, 0.45));
+      }
+
+      .brand span {
+        display: block;
+        color: var(--cyan);
+        font-size: 0.72rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .brand strong {
+        display: block;
+        color: #ffffff;
+        font-size: clamp(1.4rem, 6vw, 2rem);
+        line-height: 1;
+      }
+
+      .headline {
+        position: absolute;
+        top: 16%;
+        left: 7%;
+        right: 7%;
+        z-index: 4;
+        animation: headlineCycle 24s linear infinite;
+      }
+
+      .headline h1 {
+        margin: 0;
+        color: #ffffff;
+        font-size: clamp(2.35rem, 11vw, 4rem);
+        line-height: 0.94;
+        letter-spacing: 0;
+      }
+
+      .headline p {
+        width: min(100%, 23rem);
+        margin: 0.85rem 0 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 4vw, 1.25rem);
+        line-height: 1.35;
+      }
+
+      .fun-copy {
+        position: absolute;
+        top: 31%;
+        left: 7%;
+        right: 7%;
+        z-index: 6;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.7rem;
+        border: 1px solid rgba(247, 189, 85, 0.34);
+        border-radius: 8px;
+        background: rgba(247, 189, 85, 0.1);
+        box-shadow: 0 20px 42px rgba(0, 0, 0, 0.24);
+        animation: funCopyPop 24s linear infinite;
+      }
+
+      .fun-copy strong {
+        display: block;
+        color: #ffffff;
+        font-size: 1rem;
+      }
+
+      .fun-copy span {
+        display: block;
+        margin-top: 0.1rem;
+        color: var(--amber);
+        font-size: 0.76rem;
+        font-weight: 900;
+      }
+
+      .fun-copy b {
+        display: grid;
+        place-items: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--amber), #fff0a8);
+        color: #261604;
+        font-size: 1rem;
+        box-shadow: 0 0 22px rgba(247, 189, 85, 0.34);
+      }
+
+      .phone {
+        position: absolute;
+        left: 50%;
+        top: 39%;
+        z-index: 3;
+        width: 72%;
+        aspect-ratio: 9 / 16;
+        padding: 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 30px;
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.04)),
+          #0c1115;
+        box-shadow:
+          0 34px 70px rgba(0, 0, 0, 0.42),
+          0 0 0 7px rgba(35, 224, 189, 0.08);
+        transform: translate(-50%, 0) rotateX(6deg) rotateZ(-3deg);
+        animation: phoneMove 24s linear infinite;
+      }
+
+      .screen {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 22px;
+        background:
+          linear-gradient(145deg, rgba(35, 224, 189, 0.12), transparent),
+          #080b0e;
+        border: 1px solid rgba(35, 224, 189, 0.2);
+      }
+
+      .screen-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        padding: 0.9rem 0.85rem 0.6rem;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 900;
+      }
+
+      .chip-row,
+      .niche-list {
+        display: flex;
+        gap: 0.45rem;
+        padding: 0 0.85rem;
+      }
+
+      .chip,
+      .niche-pill {
+        white-space: nowrap;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        color: #ffffff;
+        font-size: 0.62rem;
+        font-weight: 900;
+      }
+
+      .chip {
+        padding: 0.32rem 0.55rem;
+      }
+
+      .chip.is-active,
+      .niche-pill.is-active {
+        border-color: var(--cyan);
+        background: rgba(35, 224, 189, 0.16);
+        color: var(--cyan);
+      }
+
+      .board {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+        width: 82%;
+        margin: 1rem auto 0;
+        padding: 3px;
+        border: 1px solid rgba(35, 224, 189, 0.42);
+        background: #030506;
+        transform: rotateX(8deg);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.4);
+      }
+
+      .cell {
+        position: relative;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(145deg, #26363a, #11191b);
+        color: #ffffff;
+        font-size: clamp(0.72rem, 3.1vw, 1rem);
+        font-weight: 900;
+        text-transform: uppercase;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      }
+
+      .cell.blank {
+        background: #030506;
+      }
+
+      .cell.good {
+        background: linear-gradient(145deg, rgba(143, 233, 111, 0.78), #173e22);
+        color: #f7fff5;
+        animation: flashGood 24s linear infinite;
+      }
+
+      .cell.bad {
+        background: linear-gradient(145deg, rgba(255, 101, 95, 0.8), #501c1d);
+        animation: flashBad 24s linear infinite;
+      }
+
+      .clue-strip {
+        display: grid;
+        gap: 0.45rem;
+        width: 82%;
+        margin: 0.85rem auto 0;
+      }
+
+      .clue {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 0.4rem;
+        align-items: center;
+        padding: 0.48rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.055);
+        color: var(--muted);
+        font-size: 0.68rem;
+      }
+
+      .clue b {
+        color: var(--cyan);
+      }
+
+      .clue span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .niche-list {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 9.5rem;
+        animation: nicheSlide 24s linear infinite;
+      }
+
+      .niche-pill {
+        padding: 0.42rem 0.6rem;
+      }
+
+      .stat-line {
+        position: absolute;
+        left: 0.85rem;
+        right: 0.85rem;
+        bottom: 5.8rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.45rem;
+      }
+
+      .stat {
+        padding: 0.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.055);
+      }
+
+      .stat span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.56rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 0.1rem;
+        color: #ffffff;
+        font-size: 0.85rem;
+      }
+
+      .unlock-bar {
+        position: absolute;
+        left: 0.85rem;
+        right: 0.85rem;
+        bottom: 1rem;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.55rem;
+        align-items: center;
+        padding: 0.7rem;
+        border: 1px solid rgba(247, 189, 85, 0.35);
+        border-radius: 8px;
+        background: rgba(247, 189, 85, 0.11);
+        color: #ffffff;
+      }
+
+      .unlock-bar span {
+        color: var(--amber);
+        font-size: 0.72rem;
+        font-weight: 900;
+      }
+
+      .unlock-bar b {
+        font-size: 0.78rem;
+      }
+
+      .tap-hand {
+        position: absolute;
+        z-index: 8;
+        width: 9rem;
+        height: auto;
+        opacity: 0;
+        transform-origin: 58% 78%;
+        filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.34));
+        animation: handTap 8s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+      }
+
+      .click-ring,
+      .click-ring::before,
+      .click-ring::after {
+        position: absolute;
+        z-index: 7;
+        width: 3.1rem;
+        height: 3.1rem;
+        border: 2px solid var(--cyan);
+        border-radius: 50%;
+        opacity: 0;
+        content: "";
+        animation: clickBurst 8s linear infinite;
+      }
+
+      .click-ring {
+        left: 52%;
+        top: 48%;
+      }
+
+      .click-ring.two {
+        left: 57%;
+        top: 50.5%;
+        animation-delay: 0.85s;
+      }
+
+      .click-ring.three {
+        left: 49%;
+        top: 53.6%;
+        animation-delay: 1.65s;
+      }
+
+      .click-ring::before {
+        inset: -0.7rem;
+        width: auto;
+        height: auto;
+        animation-delay: 0.12s;
+      }
+
+      .click-ring::after {
+        inset: -1.35rem;
+        width: auto;
+        height: auto;
+        border-color: var(--amber);
+        animation-delay: 0.24s;
+      }
+
+      .iq-card {
+        position: absolute;
+        top: 34%;
+        right: 5%;
+        z-index: 9;
+        width: 8.6rem;
+        padding: 0.8rem;
+        border: 1px solid rgba(143, 233, 111, 0.38);
+        border-radius: 8px;
+        background:
+          linear-gradient(145deg, rgba(143, 233, 111, 0.16), transparent),
+          rgba(7, 9, 12, 0.86);
+        box-shadow: 0 24px 54px rgba(0, 0, 0, 0.38);
+        opacity: 0;
+        transform: translateY(1rem) scale(0.8);
+        animation: iqBoost 24s linear infinite;
+      }
+
+      .brain {
+        position: relative;
+        width: 3.8rem;
+        height: 2.6rem;
+        margin: 0 auto 0.45rem;
+      }
+
+      .brain span {
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #ffc1df, #a78bfa);
+        box-shadow: 0 0 18px rgba(167, 139, 250, 0.44);
+      }
+
+      .brain span:nth-child(1) {
+        left: 0.2rem;
+        top: 0.45rem;
+        width: 1.6rem;
+        height: 1.55rem;
+      }
+
+      .brain span:nth-child(2) {
+        left: 1.15rem;
+        top: 0.05rem;
+        width: 1.65rem;
+        height: 1.75rem;
+      }
+
+      .brain span:nth-child(3) {
+        right: 0.1rem;
+        top: 0.45rem;
+        width: 1.55rem;
+        height: 1.55rem;
+      }
+
+      .brain span:nth-child(4) {
+        left: 0.85rem;
+        bottom: 0;
+        width: 2.1rem;
+        height: 1.25rem;
+      }
+
+      .iq-card strong,
+      .iq-card b,
+      .iq-card small {
+        display: block;
+        text-align: center;
+      }
+
+      .iq-card strong {
+        color: var(--green);
+        font-size: 0.72rem;
+      }
+
+      .iq-card b {
+        color: #ffffff;
+        font-size: 2rem;
+        line-height: 1;
+      }
+
+      .iq-card small {
+        margin-top: 0.22rem;
+        color: var(--muted);
+        font-weight: 900;
+      }
+
+      .confetti {
+        position: absolute;
+        z-index: 7;
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 2px;
+        opacity: 0;
+        animation: confettiPop 24s linear infinite;
+      }
+
+      .confetti.one {
+        left: 37%;
+        top: 43%;
+        background: var(--cyan);
+      }
+
+      .confetti.two {
+        left: 63%;
+        top: 46%;
+        background: var(--amber);
+        animation-delay: 0.12s;
+      }
+
+      .confetti.three {
+        left: 47%;
+        top: 34%;
+        background: var(--violet);
+        animation-delay: 0.2s;
+      }
+
+      .confetti.four {
+        left: 72%;
+        top: 58%;
+        background: var(--green);
+        animation-delay: 0.3s;
+      }
+
+      .typing-letter {
+        position: absolute;
+        z-index: 8;
+        display: grid;
+        place-items: center;
+        width: 1.7rem;
+        height: 1.7rem;
+        border: 1px solid rgba(143, 233, 111, 0.72);
+        border-radius: 6px;
+        background: linear-gradient(145deg, rgba(143, 233, 111, 0.9), #174226);
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: 900;
+        opacity: 0;
+        box-shadow:
+          0 0 18px rgba(143, 233, 111, 0.42),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        animation: typeLetter 8s linear infinite;
+      }
+
+      .typing-letter.one {
+        left: 46%;
+        top: 43%;
+        animation-delay: 0.95s;
+      }
+
+      .typing-letter.two {
+        left: 53%;
+        top: 45.8%;
+        animation-delay: 1.55s;
+      }
+
+      .typing-letter.three {
+        left: 58.5%;
+        top: 49.2%;
+        animation-delay: 2.15s;
+      }
+
+      .typing-letter.four {
+        left: 50.5%;
+        top: 53%;
+        animation-delay: 2.75s;
+      }
+
+      .typing-status {
+        position: absolute;
+        left: 50%;
+        top: 39%;
+        z-index: 8;
+        padding: 0.42rem 0.62rem;
+        border: 1px solid rgba(35, 224, 189, 0.38);
+        border-radius: 999px;
+        background: rgba(7, 9, 12, 0.82);
+        color: var(--cyan);
+        font-size: 0.68rem;
+        font-weight: 900;
+        opacity: 0;
+        transform: translateX(-50%);
+        animation: typingStatus 8s linear infinite;
+      }
+
+      .music-badge {
+        position: absolute;
+        left: 7%;
+        bottom: 2.2rem;
+        z-index: 6;
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.45rem 0.65rem;
+        border: 1px solid rgba(167, 139, 250, 0.34);
+        border-radius: 999px;
+        background: rgba(167, 139, 250, 0.12);
+        color: #ffffff;
+        font-size: 0.7rem;
+        font-weight: 900;
+        animation: musicPulse 24s linear infinite;
+      }
+
+      .music-badge span {
+        display: inline-grid;
+        place-items: center;
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
+        background: var(--violet);
+        color: #120b27;
+        animation: noteBounce 0.72s ease-in-out infinite;
+      }
+
+      .final-card {
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        gap: 1rem;
+        padding: 2rem;
+        text-align: center;
+        background:
+          linear-gradient(145deg, rgba(35, 224, 189, 0.16), transparent 42%, rgba(247, 189, 85, 0.12)),
+          rgba(7, 9, 12, 0.88);
+        opacity: 0;
+        pointer-events: none;
+        animation: finalIn 24s linear infinite;
+      }
+
+      .final-card img {
+        width: 5.5rem;
+        height: 5.5rem;
+        filter: drop-shadow(0 0 28px rgba(35, 224, 189, 0.48));
+      }
+
+      .final-card h2 {
+        margin: 0;
+        max-width: 20rem;
+        color: #ffffff;
+        font-size: clamp(2.4rem, 11vw, 4.6rem);
+        line-height: 0.9;
+      }
+
+      .final-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.4;
+      }
+
+      .spark {
+        position: absolute;
+        width: 10rem;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+        opacity: 0;
+        animation: sparkMove 24s linear infinite;
+      }
+
+      .spark.one {
+        top: 28%;
+        left: -12rem;
+      }
+
+      .spark.two {
+        top: 67%;
+        right: -12rem;
+        background: linear-gradient(90deg, transparent, var(--amber), transparent);
+        animation-delay: 1.3s;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: center;
+        gap: 0.65rem;
+        flex-wrap: wrap;
+      }
+
+      .controls button,
+      .controls a {
+        min-height: 2.5rem;
+        padding: 0 0.9rem;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--ink);
+        font: inherit;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .controls button:first-child {
+        border-color: var(--cyan);
+        background: linear-gradient(135deg, var(--cyan), #73f4c5);
+        color: #03110f;
+      }
+
+      body.recording .controls {
+        display: none;
+      }
+
+      body.paused .stage *,
+      body.paused .stage::before {
+        animation-play-state: paused !important;
+      }
+
+      @keyframes brandIn {
+        0%,
+        88%,
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        92%,
+        98% {
+          opacity: 0;
+          transform: translateY(-1rem);
+        }
+      }
+
+      @keyframes headlineCycle {
+        0%,
+        25% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        31%,
+        62% {
+          opacity: 0;
+          transform: translateY(-1rem);
+        }
+        68%,
+        83% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        88%,
+        100% {
+          opacity: 0;
+          transform: translateY(-1rem);
+        }
+      }
+
+      @keyframes funCopyPop {
+        0%,
+        8%,
+        66%,
+        100% {
+          opacity: 0;
+          transform: translateY(0.8rem) scale(0.96);
+        }
+        13%,
+        31% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+        35%,
+        58% {
+          opacity: 0.82;
+          transform: translateY(-0.3rem) scale(0.98);
+        }
+      }
+
+      @keyframes phoneMove {
+        0% {
+          transform: translate(-50%, 8%) rotateX(8deg) rotateZ(-7deg) scale(0.9);
+        }
+        11%,
+        35% {
+          transform: translate(-50%, -1%) rotateX(6deg) rotateZ(-3deg) scale(1);
+        }
+        48%,
+        76% {
+          transform: translate(-50%, -14%) rotateX(4deg) rotateZ(2deg) scale(1.05);
+        }
+        86%,
+        100% {
+          transform: translate(-50%, 7%) rotateX(8deg) rotateZ(-4deg) scale(0.92);
+        }
+      }
+
+      @keyframes flashGood {
+        0%,
+        18% {
+          filter: brightness(1);
+        }
+        20%,
+        30% {
+          filter: brightness(1.55);
+        }
+        34%,
+        100% {
+          filter: brightness(1);
+        }
+      }
+
+      @keyframes flashBad {
+        0%,
+        12% {
+          filter: brightness(1);
+        }
+        14%,
+        20% {
+          filter: brightness(1.45);
+        }
+        22%,
+        100% {
+          filter: brightness(1);
+        }
+      }
+
+      @keyframes nicheSlide {
+        0%,
+        28% {
+          transform: translateX(0);
+        }
+        42%,
+        62% {
+          transform: translateX(-38%);
+        }
+        76%,
+        100% {
+          transform: translateX(-4%);
+        }
+      }
+
+      @keyframes finalIn {
+        0%,
+        80% {
+          opacity: 0;
+          transform: scale(1.02);
+        }
+        86%,
+        96% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.02);
+        }
+      }
+
+      @keyframes sparkMove {
+        0%,
+        10% {
+          opacity: 0;
+          transform: translateX(0);
+        }
+        14%,
+        18% {
+          opacity: 1;
+        }
+        28%,
+        100% {
+          opacity: 0;
+          transform: translateX(45rem);
+        }
+      }
+
+      @keyframes handTap {
+        0% {
+          opacity: 0;
+          left: 30%;
+          top: 68%;
+          transform: rotate(169deg) scale(0.84);
+        }
+        7% {
+          opacity: 1;
+          left: 38%;
+          top: 64%;
+          transform: rotate(170deg) scale(0.93);
+        }
+        13% {
+          opacity: 1;
+          left: 43%;
+          top: 58%;
+          transform: rotate(171deg) scale(1);
+        }
+        16% {
+          opacity: 1;
+          left: 44%;
+          top: 59.2%;
+          transform: rotate(171deg) scale(0.91);
+        }
+        23% {
+          opacity: 1;
+          left: 49%;
+          top: 56%;
+          transform: rotate(169deg) scale(1);
+        }
+        26% {
+          opacity: 1;
+          left: 50%;
+          top: 57.2%;
+          transform: rotate(169deg) scale(0.91);
+        }
+        33% {
+          opacity: 1;
+          left: 55%;
+          top: 53.5%;
+          transform: rotate(172deg) scale(1);
+        }
+        36% {
+          opacity: 1;
+          left: 56%;
+          top: 54.7%;
+          transform: rotate(172deg) scale(0.91);
+        }
+        43% {
+          opacity: 1;
+          left: 47%;
+          top: 61%;
+          transform: rotate(168deg) scale(1);
+        }
+        46% {
+          opacity: 1;
+          left: 48%;
+          top: 62.2%;
+          transform: rotate(168deg) scale(0.91);
+        }
+        58% {
+          opacity: 1;
+          left: 57%;
+          top: 50%;
+          transform: rotate(174deg) scale(0.96);
+        }
+        68%,
+        100% {
+          opacity: 0;
+          left: 68%;
+          top: 38%;
+          transform: rotate(178deg) scale(0.82);
+        }
+      }
+
+      @keyframes musicPulse {
+        0%,
+        14% {
+          opacity: 0;
+          transform: translateY(0.5rem);
+        }
+        20%,
+        78% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        86%,
+        100% {
+          opacity: 0;
+          transform: translateY(0.5rem);
+        }
+      }
+
+      @keyframes noteBounce {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-8deg);
+        }
+        50% {
+          transform: translateY(-0.25rem) rotate(8deg);
+        }
+      }
+
+      @keyframes clickBurst {
+        0%,
+        13% {
+          opacity: 0;
+          transform: scale(0.45);
+        }
+        16% {
+          opacity: 0.95;
+          transform: scale(0.55);
+        }
+        21% {
+          opacity: 0;
+          transform: scale(1.55);
+        }
+        26% {
+          opacity: 0;
+          transform: scale(0.45);
+        }
+        29% {
+          opacity: 0.95;
+          transform: scale(0.55);
+        }
+        34% {
+          opacity: 0;
+          transform: scale(1.55);
+        }
+        37% {
+          opacity: 0;
+          transform: scale(0.45);
+        }
+        40% {
+          opacity: 0.95;
+          transform: scale(0.55);
+        }
+        45% {
+          opacity: 0;
+          transform: scale(1.65);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.65);
+        }
+      }
+
+      @keyframes typeLetter {
+        0%,
+        5% {
+          opacity: 0;
+          transform: translateY(0.6rem) scale(0.45);
+        }
+        12%,
+        42% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+        52%,
+        100% {
+          opacity: 0;
+          transform: translateY(-0.4rem) scale(0.76);
+        }
+      }
+
+      @keyframes typingStatus {
+        0%,
+        6% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(0.5rem);
+        }
+        12%,
+        58% {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+        68%,
+        100% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(-0.4rem);
+        }
+      }
+
+      @keyframes iqBoost {
+        0%,
+        30% {
+          opacity: 0;
+          transform: translateY(1rem) scale(0.8) rotate(-4deg);
+        }
+        36%,
+        56% {
+          opacity: 1;
+          transform: translateY(0) scale(1) rotate(2deg);
+        }
+        63%,
+        100% {
+          opacity: 0;
+          transform: translateY(-1rem) scale(0.9) rotate(5deg);
+        }
+      }
+
+      @keyframes confettiPop {
+        0%,
+        30% {
+          opacity: 0;
+          transform: translate(0, 0) rotate(0deg);
+        }
+        34% {
+          opacity: 1;
+        }
+        48%,
+        100% {
+          opacity: 0;
+          transform: translate(0.5rem, -5rem) rotate(260deg);
+        }
+      }
+
+      @media (max-width: 560px) {
+        body {
+          align-items: start;
+        }
+
+        .studio {
+          padding: 0;
+          width: 100vw;
+        }
+
+        .stage {
+          min-height: 100vh;
+          border: 0;
+          border-radius: 0;
+        }
+
+        .controls {
+          position: fixed;
+          left: 0.75rem;
+          right: 0.75rem;
+          bottom: 0.75rem;
+          z-index: 10;
+        }
+
+        body.recording .controls {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="studio" aria-label="Niche Crosswords promotional video">
+      <section class="stage" id="stage">
+        <div class="spark one"></div>
+        <div class="spark two"></div>
+
+        <div class="brand">
+          <img src="./assets/icon.svg" alt="" />
+          <div>
+            <span>Brain training by niche</span>
+            <strong>Niche Crosswords</strong>
+          </div>
+        </div>
+
+        <div class="headline">
+          <h1>Tap. Think. Level up.</h1>
+          <p>Movies, series, forex, AI, sports, law, medicine, cybersecurity, and more.</p>
+        </div>
+
+        <div class="fun-copy">
+          <div>
+            <strong>Click a clue. Beat the grid.</strong>
+            <span>Green means correct. Red means try again.</span>
+          </div>
+          <b>IQ</b>
+        </div>
+
+        <div class="phone" aria-hidden="true">
+          <div class="screen">
+            <div class="screen-top">
+              <span>Interest: movies</span>
+              <span>Medium</span>
+            </div>
+            <div class="chip-row">
+              <span class="chip is-active">Netflix Movies & Series</span>
+              <span class="chip">AI</span>
+              <span class="chip">Forex</span>
+            </div>
+
+            <div class="board">
+              <span class="cell">m</span>
+              <span class="cell">o</span>
+              <span class="cell good">v</span>
+              <span class="cell blank"></span>
+              <span class="cell">i</span>
+              <span class="cell">e</span>
+              <span class="cell good">x</span>
+              <span class="cell blank"></span>
+              <span class="cell">s</span>
+              <span class="cell bad">q</span>
+              <span class="cell">r</span>
+              <span class="cell">i</span>
+              <span class="cell">e</span>
+              <span class="cell">s</span>
+              <span class="cell">b</span>
+              <span class="cell">i</span>
+              <span class="cell">n</span>
+              <span class="cell good">g</span>
+              <span class="cell">e</span>
+              <span class="cell blank"></span>
+              <span class="cell">s</span>
+              <span class="cell">e</span>
+              <span class="cell">a</span>
+              <span class="cell">s</span>
+              <span class="cell">o</span>
+              <span class="cell">n</span>
+              <span class="cell blank"></span>
+              <span class="cell">c</span>
+              <span class="cell">l</span>
+              <span class="cell">u</span>
+              <span class="cell blank"></span>
+              <span class="cell">e</span>
+              <span class="cell">p</span>
+              <span class="cell">i</span>
+              <span class="cell">s</span>
+              <span class="cell">o</span>
+              <span class="cell">d</span>
+              <span class="cell">e</span>
+              <span class="cell">s</span>
+              <span class="cell blank"></span>
+              <span class="cell">g</span>
+              <span class="cell">e</span>
+              <span class="cell">n</span>
+              <span class="cell">r</span>
+              <span class="cell good">y</span>
+              <span class="cell blank"></span>
+              <span class="cell">w</span>
+              <span class="cell">i</span>
+              <span class="cell">n</span>
+            </div>
+
+            <div class="clue-strip">
+              <div class="clue"><b>1</b><span>Single part of a series.</span><b>7</b></div>
+              <div class="clue"><b>4</b><span>Watch many episodes in one sitting.</span><b>5</b></div>
+            </div>
+
+            <div class="niche-list">
+              <span class="niche-pill is-active">Movies</span>
+              <span class="niche-pill">DevOps</span>
+              <span class="niche-pill">Forex</span>
+              <span class="niche-pill">Medical</span>
+              <span class="niche-pill">Legal</span>
+              <span class="niche-pill">Sports</span>
+              <span class="niche-pill">Gaming</span>
+            </div>
+
+            <div class="stat-line">
+              <div class="stat"><span>Progress</span><strong>68%</strong></div>
+              <div class="stat"><span>IQ Boost</span><strong>+18</strong></div>
+              <div class="stat"><span>Time</span><strong>02:14</strong></div>
+            </div>
+
+            <div class="unlock-bar">
+              <div>
+                <span>2 free packs</span>
+                <b>Unlock specialist niches</b>
+              </div>
+              <b>Play</b>
+            </div>
+          </div>
+        </div>
+
+        <img class="tap-hand" src="./assets/hand-tap.png" alt="" aria-hidden="true" />
+        <span class="typing-status" aria-hidden="true">typing answers...</span>
+        <span class="typing-letter one" aria-hidden="true">E</span>
+        <span class="typing-letter two" aria-hidden="true">P</span>
+        <span class="typing-letter three" aria-hidden="true">I</span>
+        <span class="typing-letter four" aria-hidden="true">C</span>
+        <div class="click-ring" aria-hidden="true"></div>
+        <div class="click-ring two" aria-hidden="true"></div>
+        <div class="click-ring three" aria-hidden="true"></div>
+        <div class="iq-card" aria-hidden="true">
+          <div class="brain"><span></span><span></span><span></span><span></span></div>
+          <strong>BRAIN BOOST</strong>
+          <b>IQ +18</b>
+          <small>focus streak</small>
+        </div>
+        <span class="confetti one"></span>
+        <span class="confetti two"></span>
+        <span class="confetti three"></span>
+        <span class="confetti four"></span>
+        <div class="music-badge" aria-hidden="true"><span>B</span> arcade brain beat</div>
+
+        <div class="final-card">
+          <img src="./assets/icon.svg" alt="" />
+          <h2>Puzzles for every mind.</h2>
+          <p>Niche Crosswords builds vocabulary challenges around what your audience loves.</p>
+        </div>
+      </section>
+
+      <div class="controls" aria-label="Promo controls">
+        <button id="restartButton" type="button">Restart</button>
+        <button id="pauseButton" type="button">Pause</button>
+        <button id="musicButton" type="button">Play music</button>
+        <button id="recordButton" type="button">Recording view</button>
+        <a href="./index.html">Open app</a>
+      </div>
+    </main>
+
+    <script>
+      const restartButton = document.querySelector("#restartButton");
+      const pauseButton = document.querySelector("#pauseButton");
+      const musicButton = document.querySelector("#musicButton");
+      const recordButton = document.querySelector("#recordButton");
+      const stage = document.querySelector("#stage");
+      let audioContext;
+      let musicTimer;
+      let musicStep = 0;
+
+      const melody = [
+        523.25, 659.25, 783.99, 659.25, 587.33, 739.99, 880, 739.99,
+        523.25, 659.25, 987.77, 880, 783.99, 659.25, 587.33, 493.88,
+      ];
+
+      function playTone(frequency, start, duration, type, gainValue) {
+        const oscillator = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        oscillator.type = type;
+        oscillator.frequency.setValueAtTime(frequency, start);
+        gain.gain.setValueAtTime(0.0001, start);
+        gain.gain.exponentialRampToValueAtTime(gainValue, start + 0.015);
+        gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+        oscillator.connect(gain).connect(audioContext.destination);
+        oscillator.start(start);
+        oscillator.stop(start + duration + 0.02);
+      }
+
+      function scheduleBeat() {
+        const now = audioContext.currentTime;
+        const lead = 0.04;
+        const note = melody[musicStep % melody.length];
+        const bass = musicStep % 8 < 4 ? 130.81 : 146.83;
+        playTone(note, now + lead, 0.12, "square", 0.04);
+        if (musicStep % 2 === 0) {
+          playTone(bass, now + lead, 0.18, "triangle", 0.055);
+        }
+        if (musicStep % 4 === 2) {
+          playTone(note * 1.5, now + lead, 0.08, "sawtooth", 0.018);
+        }
+        musicStep += 1;
+      }
+
+      function startMusic() {
+        if (!audioContext) {
+          const AudioEngine = window.AudioContext || window.webkitAudioContext;
+          if (!AudioEngine) {
+            musicButton.textContent = "No audio";
+            return;
+          }
+          audioContext = new AudioEngine();
+        }
+        audioContext.resume();
+        if (musicTimer) {
+          return;
+        }
+        scheduleBeat();
+        musicTimer = window.setInterval(scheduleBeat, 170);
+        musicButton.textContent = "Stop music";
+      }
+
+      function stopMusic() {
+        if (musicTimer) {
+          window.clearInterval(musicTimer);
+          musicTimer = undefined;
+        }
+        musicButton.textContent = "Play music";
+      }
+
+      restartButton.addEventListener("click", () => {
+        stage.style.animation = "none";
+        document.body.classList.remove("paused");
+        pauseButton.textContent = "Pause";
+        window.requestAnimationFrame(() => {
+          stage.style.animation = "";
+          stage.querySelectorAll("*").forEach((element) => {
+            element.style.animation = "none";
+            window.requestAnimationFrame(() => {
+              element.style.animation = "";
+            });
+          });
+        });
+      });
+
+      pauseButton.addEventListener("click", () => {
+        document.body.classList.toggle("paused");
+        pauseButton.textContent = document.body.classList.contains("paused") ? "Resume" : "Pause";
+      });
+
+      musicButton.addEventListener("click", () => {
+        if (musicTimer) {
+          stopMusic();
+        } else {
+          startMusic();
+        }
+      });
+
+      recordButton.addEventListener("click", () => {
+        document.body.classList.toggle("recording");
+      });
+    </script>
+  </body>
+</html>

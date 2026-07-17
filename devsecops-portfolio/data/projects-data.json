@@ -1,0 +1,224 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Cloud Security Orchestrator",
+      "category": "Cloud Security",
+      "description": "Enterprise-grade cloud security orchestration platform that automates threat detection, incident response, and compliance monitoring across multi-cloud environments.",
+      "longDescription": "A comprehensive cloud security platform built with Python and integrated with major cloud providers. Features real-time threat detection, automated remediation workflows, and compliance reporting. The system processes over 10 million security events daily and provides actionable insights through machine learning algorithms.",
+      "image": "images/cloud-security-project.png",
+      "technologies": ["Python", "AWS", "Azure", "FastAPI", "Docker", "Kubernetes", "Terraform", "PostgreSQL", "Redis", "Prometheus"],
+      "github": "https://github.com/rachelkhoza-dev/cloud-security-orchestrator",
+      "demo": "https://cloud-security-demo.herokuapp.com",
+      "featured": true,
+      "status": "Production",
+      "year": "2024",
+      "highlights": [
+        "Reduced incident response time by 85%",
+        "Automated 95% of security compliance checks",
+        "Processes 10M+ security events daily",
+        "Supports AWS, Azure, and GCP"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "DevSecOps Pipeline Framework",
+      "category": "DevSecOps",
+      "description": "Automated CI/CD pipeline framework with integrated security scanning, vulnerability assessment, and compliance validation for containerized applications.",
+      "longDescription": "A complete DevSecOps pipeline solution that integrates security at every stage of the development lifecycle. Features automated security scanning, SAST/DAST testing, container vulnerability assessment, and policy-as-code implementation. Deployed across 50+ microservices in production.",
+      "image": "images/devops-pipeline-project.png",
+      "technologies": ["Python", "Jenkins", "Docker", "Kubernetes", "SonarQube", "Snyk", "OWASP ZAP", "Ansible", "GitLab CI", "Helm"],
+      "github": "https://github.com/rachelkhoza-dev/devsecops-pipeline",
+      "demo": null,
+      "featured": true,
+      "status": "Production",
+      "year": "2024",
+      "highlights": [
+        "Implemented across 50+ microservices",
+        "Reduced vulnerabilities by 90%",
+        "Automated security policy enforcement",
+        "Zero-downtime deployment capability"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Python Security Toolkit",
+      "category": "Security Tools",
+      "description": "Comprehensive Python toolkit for security professionals featuring automated penetration testing, vulnerability scanning, and incident response capabilities.",
+      "longDescription": "An extensive collection of Python-based security tools designed for cybersecurity professionals. Includes modules for network scanning, web application testing, malware analysis, and forensic investigation. The toolkit is used by security teams across multiple organizations.",
+      "image": "images/python-security-tool.png",
+      "technologies": ["Python", "Scapy", "Requests", "BeautifulSoup", "Nmap", "SQLAlchemy", "Click", "Pytest", "Docker"],
+      "github": "https://github.com/rachelkhoza-dev/python-security-toolkit",
+      "demo": "https://python-security-demo.alexrodriguez.dev",
+      "featured": true,
+      "status": "Active Development",
+      "year": "2023",
+      "highlights": [
+        "1000+ GitHub stars",
+        "Used by 20+ security teams",
+        "15+ security testing modules",
+        "Comprehensive documentation"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Kubernetes Security Monitor",
+      "category": "Container Security",
+      "description": "Real-time Kubernetes security monitoring solution with threat detection, policy enforcement, and compliance reporting for container workloads.",
+      "longDescription": "Advanced Kubernetes security platform that provides continuous monitoring, threat detection, and policy enforcement for container environments. Features runtime security monitoring, admission controllers, and automated compliance reporting for CIS benchmarks and security best practices.",
+      "image": "images/k8s-security-project.png",
+      "technologies": ["Go", "Python", "Kubernetes", "Falco", "Prometheus", "Grafana", "CRDs", "Admission Controllers", "Docker", "Helm"],
+      "github": "https://github.com/rachelkhoza-dev/k8s-security-monitor",
+      "demo": null,
+      "featured": true,
+      "status": "Production",
+      "year": "2023",
+      "highlights": [
+        "Monitors 200+ K8s clusters",
+        "Real-time threat detection",
+        "CIS compliance automation",
+        "Policy-as-code implementation"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Infrastructure as Code Security Scanner",
+      "category": "Infrastructure Security",
+      "description": "Automated security scanning solution for Infrastructure as Code templates with policy validation, misconfiguration detection, and compliance checking.",
+      "longDescription": "Comprehensive IaC security scanner that analyzes Terraform, CloudFormation, and Kubernetes manifests for security misconfigurations. Integrates with CI/CD pipelines to prevent insecure infrastructure deployments and ensures compliance with security policies.",
+      "image": "images/iac-project.png",
+      "technologies": ["Python", "Terraform", "CloudFormation", "YAML", "JSON", "Ansible", "AWS CLI", "Azure CLI", "GitLab CI"],
+      "github": "https://github.com/rachelkhoza-dev/iac-security-scanner",
+      "demo": "https://iac-scanner-demo.herokuapp.com",
+      "featured": false,
+      "status": "Production",
+      "year": "2022",
+      "highlights": [
+        "Scans 1000+ IaC templates daily",
+        "Prevents 95% of misconfigurations",
+        "Multi-cloud support",
+        "CI/CD integration ready"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Threat Intelligence Platform",
+      "category": "Threat Intelligence",
+      "description": "AI-powered threat intelligence platform that aggregates, analyzes, and correlates security data from multiple sources to provide actionable insights.",
+      "longDescription": "Advanced threat intelligence platform that collects data from various threat feeds, analyzes patterns using machine learning, and provides real-time threat indicators. The platform helps security teams stay ahead of emerging threats and make informed decisions.",
+      "image": "images/threat-detection-project.jpg",
+      "technologies": ["Python", "TensorFlow", "Elasticsearch", "Kibana", "Apache Kafka", "Redis", "PostgreSQL", "FastAPI", "Docker"],
+      "github": "https://github.com/rachelkhoza-dev/threat-intelligence-platform",
+      "demo": null,
+      "featured": false,
+      "status": "Active Development",
+      "year": "2024",
+      "highlights": [
+        "Processes 50M+ threat indicators",
+        "ML-powered pattern recognition",
+        "Real-time threat correlation",
+        "API-first architecture"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Serverless Security Framework",
+      "category": "Serverless Security",
+      "description": "Security framework for serverless applications with runtime protection, function monitoring, and automated threat response capabilities.",
+      "longDescription": "Comprehensive security solution designed specifically for serverless architectures. Provides runtime application self-protection (RASP), function-level monitoring, and automated threat response for AWS Lambda, Azure Functions, and Google Cloud Functions.",
+      "image": "images/cloud-security-project.png",
+      "technologies": ["Python", "AWS Lambda", "Azure Functions", "Serverless Framework", "CloudWatch", "API Gateway", "DynamoDB"],
+      "github": "https://github.com/rachelkhoza-dev/serverless-security-framework",
+      "demo": "https://serverless-security.alexrodriguez.dev",
+      "featured": false,
+      "status": "Beta",
+      "year": "2023",
+      "highlights": [
+        "Zero-impact runtime protection",
+        "Multi-cloud serverless support",
+        "Automated threat response",
+        "Function-level monitoring"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "API Security Gateway",
+      "category": "API Security",
+      "description": "High-performance API security gateway with real-time threat detection, rate limiting, authentication, and comprehensive API protection features.",
+      "longDescription": "Enterprise-grade API security gateway that provides comprehensive protection for REST and GraphQL APIs. Features include real-time threat detection, sophisticated rate limiting, OAuth2/JWT authentication, and detailed API analytics. Handles millions of API requests daily.",
+      "image": "images/python-security-tool.png",
+      "technologies": ["Python", "FastAPI", "Redis", "PostgreSQL", "JWT", "OAuth2", "Nginx", "Docker", "Kubernetes", "Prometheus"],
+      "github": "https://github.com/rachelkhoza-dev/api-security-gateway",
+      "demo": "https://api-gateway-demo.herokuapp.com",
+      "featured": false,
+      "status": "Production",
+      "year": "2022",
+      "highlights": [
+        "Handles 10M+ API requests daily",
+        "Sub-millisecond latency",
+        "Advanced rate limiting",
+        "Comprehensive threat detection"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Multicloud DevSecOps Blueprints",
+      "category": "DevSecOps",
+      "description": "Terraform blueprints and policy packs for secure AWS and Azure landing zones with automated drift detection and compliance reporting.",
+      "longDescription": "Modular infrastructure-as-code stacks that provision production-ready landing zones across AWS and Azure. The project ships with CIS-mapped guardrails, Sentinel policies, and Python automation that detects configuration drift and publishes security reports. Ideal for demonstrating multicloud governance expertise.",
+      "image": "images/cloud-security-project.png",
+      "technologies": ["Terraform", "AWS", "Azure", "OPA", "Sentinel", "Python", "GitHub Actions"],
+      "github": "https://github.com/RachelKhoza/multicloud-devsecops-blueprints",
+      "demo": null,
+      "featured": true,
+      "status": "Active Development",
+      "year": "2024",
+      "highlights": [
+        "AWS Control Tower & Azure Landing Zone automation",
+        "Policy-as-code guardrails mapped to CIS benchmarks",
+        "Python drift detection utilities with GitHub Actions integration",
+        "Extensible design ready for GCP adoption"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Multi-Stage Secure CI/CD",
+      "category": "DevSecOps",
+      "description": "End-to-end CI/CD pipeline that builds, scans, signs, and deploys a FastAPI microservice to EKS and AKS with progressive delivery controls.",
+      "longDescription": "A GitHub Actions pipeline that runs linting, type checking, unit tests, SBOM generation, vulnerability scanning, and Terraform gated deployments. Container images are signed and promoted through preview, staging, and production environments with manual approvals and automated DAST coverage.",
+      "image": "images/devops-pipeline-project.png",
+      "technologies": ["Python", "FastAPI", "Docker", "GitHub Actions", "Terraform", "Trivy", "Syft", "OWASP ZAP", "AWS EKS", "Azure AKS"],
+      "github": "https://github.com/RachelKhoza/multi-stage-secure-cicd",
+      "demo": null,
+      "featured": true,
+      "status": "Prototype",
+      "year": "2024",
+      "highlights": [
+        "Security scans embedded at every pipeline stage",
+        "SBOM and image signing workflow with cosign-ready artifacts",
+        "Supports deployment to both AWS EKS and Azure AKS",
+        "Preview environments backed by Terraform plans"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Cloud Cost & Compliance Monitor",
+      "category": "Cloud Security",
+      "description": "Serverless automation that correlates AWS cost anomalies and Azure Policy drift with unified Slack or Teams alerts.",
+      "longDescription": "Combines AWS Lambda and Azure automation scripts to surface spend anomalies and compliance violations in near real time. Terraform modules provision monitoring resources while Python functions aggregate findings and send actionable notifications to chat platforms.",
+      "image": "images/iac-project.png",
+      "technologies": ["AWS Lambda", "Azure Policy", "Python", "Terraform", "Cost Explorer", "Slack API", "Microsoft Teams"],
+      "github": "https://github.com/RachelKhoza/cloud-cost-compliance-monitor",
+      "demo": null,
+      "featured": true,
+      "status": "In Planning",
+      "year": "2024",
+      "highlights": [
+        "Automated cost anomaly detection via AWS Cost Explorer",
+        "Azure Policy compliance reporting with remediation insights",
+        "ChatOps notifications for rapid triage",
+        "Extensible connectors for FinOps dashboards"
+      ]
+    }
+  ]
+}

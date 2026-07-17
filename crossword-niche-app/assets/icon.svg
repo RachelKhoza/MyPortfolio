@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Niche Crosswords icon">
+  <rect width="128" height="128" rx="26" fill="#0f766e"/>
+  <path d="M24 27h80v74H24z" fill="#fbfff9"/>
+  <path d="M24 51h80M24 75h80M48 27v74M72 27v74M96 27v74" stroke="#223128" stroke-width="5"/>
+  <rect x="24" y="27" width="24" height="24" fill="#223128"/>
+  <rect x="72" y="51" width="24" height="24" fill="#223128"/>
+  <rect x="48" y="75" width="24" height="26" fill="#223128"/>
+  <circle cx="98" cy="28" r="14" fill="#d85c4a"/>
+  <path d="M91 28l5 5 10-12" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

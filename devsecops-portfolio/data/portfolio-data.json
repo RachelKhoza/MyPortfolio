@@ -1,0 +1,97 @@
+{
+  "personal": {
+    "name": "Mamo Khoza",
+    "title": "DevSecOps Engineer & Cloud Security Specialist",
+    "tagline": "Empowering secure cloud innovation through thoughtful automation",
+    "bio": "Passionate DevSecOps engineer with 10+ years of experience in cloud security, infrastructure automation, and Python development. I specialize in building secure, scalable, and automated solutions that protect applications and infrastructure throughout the entire development lifecycle. I believe in creating technology that empowers teams while maintaining the highest security standards.",
+    "location": "Johannesburg, South Africa",
+    "email": "rachel.khoza@email.com",
+    "phone": "+27 (11) 123-4567",
+    "linkedin": "https://linkedin.com/in/rachelkhoza-devsecops",
+    "github": "https://github.com/rachelkhoza-dev",
+    "twitter": "https://twitter.com/racheldevsecops",
+    "website": "https://rachelkhoza-portfolio.com"
+  },
+  "highlights": [
+    "5+ years DevSecOps experience",
+    "AWS & Azure certified professional",
+    "Python automation expert",
+    "Security-first mindset",
+    "CI/CD pipeline specialist",
+    "Infrastructure as Code advocate"
+  ],
+  "experience": [
+    {
+      "company": "BMW IT HUB",
+      "position": "Senior Ansible Ops Engineer",
+      "duration": "2023 - Present",
+      "description": "Lead Devops initiatives for enterprise clients, implementing secure CI/CD pipelines and cloud infrastructure automation.",
+      "achievements": [
+        "Reduced security vulnerabilities by 75% through automated scanning integration",
+        "Implemented zero-downtime deployments for mission-critical applications",
+        "Designed and deployed multi-cloud security architecture serving 10M+ users"
+      ]
+    },
+    {
+      "company": "Discovery Vitality Global.",
+      "position": "DevSecOps Engineer",
+      "duration": "2021 - 2023",
+      "description": "Developed and maintained secure cloud infrastructure using Infrastructure as Code principles.",
+      "achievements": [
+        "Built automated compliance monitoring system reducing audit time by 60%",
+        "Implemented container security scanning pipeline preventing 500+ vulnerabilities",
+        "Designed disaster recovery solution with 99.9% uptime guarantee"
+      ]
+    },
+    {
+      "company": "Capitec Bank ",
+      "position": "Cloud Security Developer",
+      "duration": "2020 - 2021",
+      "description": "Developed Python-based security tools and automation scripts for threat detection and response in AWS.",
+      "achievements": [
+        "Created automated threat detection system identifying 95% of security incidents",
+        "Developed API security testing framework used across 20+ microservices",
+        "Built log analysis tool processing 1TB+ daily security logs"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Cybersecurity",
+      "school": "Havard Online",
+      "year": "2020"
+    },
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "school": "University of Cape Town",
+      "year": "2018",
+      "honors": "First Class Honours"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Security - Specialty",
+      "issuer": "Amazon Web Services",
+      "year": "2024",
+      "credentialId": "AWS-CSS-2024-001"
+    },
+    {
+      "name": "AWS Solution Architect Associate",
+      "issuer": "Amazon Web Services",
+      "year": "2023",
+      "credentialId": "CKS-2023-456"
+    },
+    {
+      "name": "Azure Security Engineer Associate",
+      "issuer": "Microsoft",
+      "year": "2023",
+      "credentialId": "AZ-500-2023-789"
+    },
+    {
+      "name": "Azure Fundementals",
+      "issuer": "Microsoft",
+      "year": "2022",
+      "credentialId": "CISM-2022-123"
+    }
+  ]
+}
