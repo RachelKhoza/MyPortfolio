@@ -5,7 +5,7 @@ pubDate: 2026-06-20
 tags: ["project", "jenkins", "sonarqube", "trivy", "ci-cd"]
 ---
 
-This is the most interview-friendly lab because it is easy to demonstrate: build an app, run quality checks, scan the image, fail on important findings, then document the fix.
+This is a practical lab because it is easy to demonstrate: build an app, run quality checks, scan the image, fail on important findings, then document the fix.
 
 ## What the repo will include
 

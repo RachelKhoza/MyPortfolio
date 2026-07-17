@@ -5,7 +5,7 @@ pubDate: 2026-06-22
 tags: ["project", "terraform", "azure", "policy-as-code", "platform-engineering"]
 ---
 
-This is the project I want recruiters to open when they ask whether I can design a cloud foundation, not just deploy individual resources.
+This is the project I want people to open when they ask whether I can design a cloud foundation, not just deploy individual resources.
 
 The goal is a small Azure landing zone that is realistic enough to show engineering judgement, but safe enough to run as a public portfolio project without exposing secrets or creating unnecessary cost.
 

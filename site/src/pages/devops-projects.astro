@@ -9,7 +9,7 @@ const repoSearchUrl = `${githubProfileUrl}?tab=repositories`;
 
 <BaseLayout
   title="DevOps & DevSecOps Projects - Rachel Khoza"
-  description="A recruiter-friendly DevOps and DevSecOps project portfolio for Rachel Khoza, with secure CI/CD, Terraform, Kubernetes, SonarQube, Trivy, FinOps, and incident response projects."
+  description="A DevOps and DevSecOps project portfolio for Rachel Khoza, with secure CI/CD, Terraform, Kubernetes, SonarQube, Trivy, FinOps, and incident response projects."
 >
   <Nav />
   <main class="flex-1">
@@ -23,7 +23,7 @@ const repoSearchUrl = `${githubProfileUrl}?tab=repositories`;
           <p class="mt-6 text-lg text-ink-200 leading-relaxed max-w-3xl">
             This page turns hands-on DevOps learning into public proof: pipelines, policy-as-code,
             cloud baselines, Kubernetes controls, FinOps automation, and incident runbooks that can
-            be opened by recruiters and technical interviewers.
+            be opened by reviewers and technical teams.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href={githubProfileUrl} target="_blank" rel="noopener" class="btn-primary">
@@ -133,7 +133,7 @@ const repoSearchUrl = `${githubProfileUrl}?tab=repositories`;
             </div>
 
             <div class="mt-6 pt-5 border-t border-ink-800">
-              <p class="text-sm text-ink-200 mb-4">{project.recruiterSignal}</p>
+              <p class="text-sm text-ink-200 mb-4">{project.projectValue}</p>
               <a href={project.repoUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-mono text-accent hover:translate-x-1 transition">
                 GitHub repo target
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">

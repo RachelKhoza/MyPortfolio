@@ -23,10 +23,10 @@ export const projectTracks = [
       'Create reusable workflow files under .github/workflows/',
       'Add sample Docker app and Terraform module with known passing controls',
       'Publish screenshots of successful and failed security gates',
-      'Write a recruiter-friendly README with architecture and tradeoffs',
+      'Write a clear technical README with architecture and tradeoffs',
     ],
-    recruiterSignal:
-      'Gives hiring teams a fast way to see how you design DevSecOps guardrails, not just list scanner names.',
+    projectValue:
+      'Shows how the pipeline design turns scanner output into enforceable DevSecOps guardrails.',
   },
   {
     id: 'terraform-azure-landing-zone-lite',
@@ -51,7 +51,7 @@ export const projectTracks = [
       'Add GitHub Actions validation: fmt, validate, tflint, checkov, plan',
       'Document how OIDC avoids static Azure credentials in CI',
     ],
-    recruiterSignal:
+    projectValue:
       'Proves you can design the cloud foundation teams deploy onto, including controls and developer experience.',
   },
   {
@@ -77,7 +77,7 @@ export const projectTracks = [
       'Ship secure and insecure sample workloads to prove the gates',
       'Add diagrams for request flow, policy flow, and alert flow',
     ],
-    recruiterSignal:
+    projectValue:
       'Moves your profile beyond pipeline tooling into platform security and production Kubernetes thinking.',
   },
   {
@@ -103,8 +103,8 @@ export const projectTracks = [
       'Write Jenkinsfile stages for build, unit test, SonarQube, Trivy, and publish',
       'Capture results in README and link from the portfolio page',
     ],
-    recruiterSignal:
-      'Makes your GitHub activity visible and practical for DevOps interviews that ask for CI, scanning, and troubleshooting proof.',
+    projectValue:
+      'Makes your GitHub activity visible through CI, scanning, and troubleshooting proof.',
   },
   {
     id: 'cloud-cost-governance-bot',
@@ -129,7 +129,7 @@ export const projectTracks = [
       'Generate a markdown report for pull requests',
       'Add dry-run GitHub issue creation for drift items',
     ],
-    recruiterSignal:
+    projectValue:
       'Shows the business side of platform engineering: controls, cost, and automation that leaders care about.',
   },
   {
@@ -155,7 +155,7 @@ export const projectTracks = [
       'Create tabletop exercise checklist',
       'Publish a blog post linking each runbook to platform controls',
     ],
-    recruiterSignal:
+    projectValue:
       'Positions you as someone who can operate under pressure and build repeatable security response, not just deploy tools.',
   },
 ];
