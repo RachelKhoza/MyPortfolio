@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#06090d"/>
+  <path d="M32 10 L52 20 L52 36 C52 46 42 54 32 56 C22 54 12 46 12 36 L12 20 Z" fill="none" stroke="#22d3ee" stroke-width="3" stroke-linejoin="round"/>
+  <text x="32" y="40" text-anchor="middle" font-family="ui-monospace, monospace" font-size="22" font-weight="700" fill="#22d3ee">rk</text>
+</svg>

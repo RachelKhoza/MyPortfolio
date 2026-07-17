@@ -1,0 +1,46 @@
+---
+const groups = [
+  {
+    label: 'Cloud',
+    items: [
+      { name: 'AWS Certified DevOps Engineer — Professional', year: '2023' },
+      { name: 'Microsoft Azure Fundamentals (AZ-900)', year: '2024' },
+    ],
+  },
+  {
+    label: 'Security',
+    items: [
+      { name: 'ISC² Certified in Cybersecurity (CC)', year: '2023' },
+      { name: 'Cybersecurity: Managing Risk — Harvard', year: '2021' },
+    ],
+  },
+  {
+    label: 'IaC & Data',
+    items: [
+      { name: 'HashiCorp Terraform Associate', year: '2022' },
+      { name: 'AWS Certified Machine Learning — Specialty', year: '2021' },
+    ],
+  },
+];
+---
+
+<section id="certs" class="container-page py-20 border-t border-ink-800/60">
+  <p class="section-eyebrow">// credentials</p>
+  <h2 class="section-heading mb-10">Certifications.</h2>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {groups.map((g) => (
+      <div class="card">
+        <p class="font-mono text-xs uppercase tracking-wider text-accent mb-4">{g.label}</p>
+        <ul class="space-y-3">
+          {g.items.map((i) => (
+            <li>
+              <p class="text-ink-50 text-sm font-medium leading-snug">{i.name}</p>
+              <p class="font-mono text-xs text-ink-400 mt-0.5">{i.year}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

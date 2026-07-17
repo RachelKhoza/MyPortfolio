@@ -1,0 +1,83 @@
+---
+import { githubProfileUrl } from '../data/devopsProjects';
+---
+
+<section class="relative overflow-hidden">
+  <!-- subtle grid background -->
+  <div
+    class="absolute inset-0 pointer-events-none opacity-[0.18]"
+    style="background-image: linear-gradient(rgba(34,211,238,0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.20) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);"
+  >
+  </div>
+
+  <div class="container-page relative py-20 sm:py-28">
+    <div class="grid lg:grid-cols-[1fr_360px] gap-12 items-center">
+      <div>
+        <div class="flex items-center gap-2 mb-6">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+          </span>
+          <span class="font-mono text-xs text-ink-300 tracking-wider uppercase">
+            Johannesburg based · open to remote roles globally
+          </span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-ink-50 leading-[1.05]">
+          Lead DevSecOps &<br />
+          <span class="text-accent">Cloud Security</span> Engineer.
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-lg text-ink-200 leading-relaxed">
+          I build <span class="text-ink-50 font-semibold">secure-by-default platforms</span> on Azure and AWS:
+          landing zones, hardened CI/CD, policy-as-code guardrails, and supply-chain controls that let
+          engineering teams ship faster without breaking compliance.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="/devops-projects/" class="btn-primary">
+            View DevSecOps projects
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href={githubProfileUrl} target="_blank" rel="noopener" class="btn-ghost">GitHub activity</a>
+          <a href="/RachelKhoza_CV.pdf" download class="btn-ghost">Download CV</a>
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-2 text-xs">
+          <span class="chip">Azure</span>
+          <span class="chip">AWS</span>
+          <span class="chip">Terraform</span>
+          <span class="chip">Ansible</span>
+          <span class="chip">Kubernetes</span>
+          <span class="chip">GitHub Actions</span>
+          <span class="chip">GitLab CI</span>
+          <span class="chip">Checkov · Trivy · Gitleaks</span>
+          <span class="chip">OPA</span>
+          <span class="chip">HashiCorp Vault</span>
+          <span class="chip">Python · PowerShell · Bash</span>
+        </div>
+      </div>
+
+      <aside class="max-w-md lg:ml-auto">
+        <img
+          src="/devsecops-hero.png"
+          alt="Engineer reviewing secure cloud platform code"
+          class="aspect-[4/3] w-full rounded-lg border border-ink-700 object-cover object-center shadow-2xl shadow-black/30"
+          loading="eager"
+        />
+        <div class="mt-4 grid grid-cols-2 gap-3">
+          <div class="rounded-lg border border-ink-700 bg-ink-900/75 p-4">
+            <p class="font-mono text-2xl font-semibold text-accent">16+</p>
+            <p class="mt-1 text-xs text-ink-300">years in regulated engineering</p>
+          </div>
+          <div class="rounded-lg border border-ink-700 bg-ink-900/75 p-4">
+            <p class="font-mono text-2xl font-semibold text-accent">300+</p>
+            <p class="mt-1 text-xs text-ink-300">cloud workloads influenced</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

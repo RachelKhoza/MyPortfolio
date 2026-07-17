@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+import { githubProfileUrl, projectTracks } from '../data/devopsProjects';
+
+const repoSearchUrl = `${githubProfileUrl}?tab=repositories`;
+---
+
+<BaseLayout
+  title="DevOps & DevSecOps Projects - Rachel Khoza"
+  description="A recruiter-friendly DevOps and DevSecOps project portfolio for Rachel Khoza, with secure CI/CD, Terraform, Kubernetes, SonarQube, Trivy, FinOps, and incident response projects."
+>
+  <Nav />
+  <main class="flex-1">
+    <section class="container-page py-20 sm:py-24">
+      <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start">
+        <div>
+          <p class="section-eyebrow">// devops & devsecops portfolio</p>
+          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-ink-50 leading-tight">
+            GitHub projects built to prove senior DevSecOps delivery.
+          </h1>
+          <p class="mt-6 text-lg text-ink-200 leading-relaxed max-w-3xl">
+            This page turns hands-on DevOps learning into public proof: pipelines, policy-as-code,
+            cloud baselines, Kubernetes controls, FinOps automation, and incident runbooks that can
+            be opened by recruiters and technical interviewers.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href={githubProfileUrl} target="_blank" rel="noopener" class="btn-primary">
+              View GitHub activity
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a href="#project-tracks" class="btn-ghost">Project tracks</a>
+            <a href="/RachelKhoza_CV.pdf" download class="btn-ghost">Download CV</a>
+          </div>
+        </div>
+
+        <aside class="border border-ink-700 bg-ink-900/70 rounded-lg p-6">
+          <p class="font-mono text-xs uppercase tracking-wider text-accent mb-4">Publishing strategy</p>
+          <ol class="space-y-4 text-sm text-ink-200">
+            <li class="flex gap-3">
+              <span class="font-mono text-accent">01</span>
+              <span>Publish one small, complete repo every 7-10 days instead of many unfinished demos.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-mono text-accent">02</span>
+              <span>Each repo needs a README, architecture diagram, CI badge, screenshots, and tradeoffs.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-mono text-accent">03</span>
+              <span>Pin the strongest repos on GitHub so profile visitors see DevSecOps work first.</span>
+            </li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="border-y border-ink-800/60 bg-ink-900/35">
+      <div class="container-page py-10 grid sm:grid-cols-3 gap-5">
+        <div>
+          <p class="font-mono text-2xl text-accent font-semibold">6</p>
+          <p class="text-sm text-ink-300 mt-1">GitHub-ready project tracks</p>
+        </div>
+        <div>
+          <p class="font-mono text-2xl text-accent font-semibold">30 days</p>
+          <p class="text-sm text-ink-300 mt-1">Practical publishing sprint</p>
+        </div>
+        <div>
+          <p class="font-mono text-2xl text-accent font-semibold">1 profile</p>
+          <p class="text-sm text-ink-300 mt-1">Portfolio, GitHub, CV, and case studies connected</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="project-tracks" class="container-page py-20">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
+        <div>
+          <p class="section-eyebrow">// project tracks</p>
+          <h2 class="section-heading">What to build and push.</h2>
+        </div>
+        <a href={repoSearchUrl} target="_blank" rel="noopener" class="btn-ghost self-start md:self-auto">
+          GitHub repositories
+        </a>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-6">
+        {projectTracks.map((project) => (
+          <article id={project.id} class="card scroll-mt-24">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+              <div>
+                <p class="font-mono text-xs text-accent uppercase tracking-wider mb-2">
+                  {project.stage}
+                </p>
+                <h3 class="text-2xl font-semibold text-ink-50">{project.title}</h3>
+              </div>
+              <span class="chip shrink-0">{project.repoName}</span>
+            </div>
+
+            <p class="text-ink-300 leading-relaxed mb-4">{project.summary}</p>
+            <p class="text-sm text-ink-200 border-l-2 border-accent pl-4 mb-5">
+              {project.result}
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              {project.stack.map((item) => <span class="chip">{item}</span>)}
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <p class="font-mono text-xs uppercase tracking-wider text-ink-400 mb-3">Proof to show</p>
+                <ul class="space-y-2 text-sm text-ink-300">
+                  {project.proof.map((item) => (
+                    <li class="flex gap-2">
+                      <span class="text-accent">-</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p class="font-mono text-xs uppercase tracking-wider text-ink-400 mb-3">Build steps</p>
+                <ul class="space-y-2 text-sm text-ink-300">
+                  {project.buildPlan.map((item) => (
+                    <li class="flex gap-2">
+                      <span class="text-accent">-</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-ink-800">
+              <p class="text-sm text-ink-200 mb-4">{project.recruiterSignal}</p>
+              <a href={project.repoUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-mono text-accent hover:translate-x-1 transition">
+                GitHub repo target
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="container-page pb-24">
+      <div class="border border-ink-700 bg-ink-900/70 rounded-lg p-6 sm:p-8">
+        <p class="section-eyebrow">// first month sprint</p>
+        <h2 class="text-2xl sm:text-3xl font-bold text-ink-50 mb-6">Publishing order.</h2>
+        <div class="grid md:grid-cols-4 gap-5">
+          <div>
+            <p class="font-mono text-xs uppercase tracking-wider text-accent mb-2">Week 1</p>
+            <p class="text-sm text-ink-200">Ship Secure CI/CD Starter with one passing and one failing pipeline example.</p>
+          </div>
+          <div>
+            <p class="font-mono text-xs uppercase tracking-wider text-accent mb-2">Week 2</p>
+            <p class="text-sm text-ink-200">Publish the SonarQube + Trivy lab and screenshots of scan results.</p>
+          </div>
+          <div>
+            <p class="font-mono text-xs uppercase tracking-wider text-accent mb-2">Week 3</p>
+            <p class="text-sm text-ink-200">Add Terraform Azure Landing Zone Lite with CI validation and policy checks.</p>
+          </div>
+          <div>
+            <p class="font-mono text-xs uppercase tracking-wider text-accent mb-2">Week 4</p>
+            <p class="text-sm text-ink-200">Publish Kubernetes Security Baseline and pin the strongest repos on GitHub.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

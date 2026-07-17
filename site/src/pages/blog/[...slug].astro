@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout title={`${post.data.title} — Rachel Khoza`} description={post.data.description}>
+  <Nav />
+  <main class="flex-1">
+    <article class="container-page py-20 max-w-3xl">
+      <a href="/blog" class="font-mono text-xs text-accent hover:underline">
+        ← back to all posts
+      </a>
+
+      <header class="mt-6 mb-10">
+        <p class="font-mono text-xs text-ink-400 uppercase tracking-wider mb-3">
+          {fmt(post.data.pubDate)}
+          {post.data.updatedDate && ` · updated ${fmt(post.data.updatedDate)}`}
+        </p>
+        <h1 class="text-3xl sm:text-4xl font-bold text-ink-50 leading-tight">
+          {post.data.title}
+        </h1>
+        <p class="mt-4 text-lg text-ink-300 leading-relaxed">{post.data.description}</p>
+        <div class="flex flex-wrap gap-1.5 mt-5">
+          {post.data.tags.map((t) => <span class="chip">{t}</span>)}
+        </div>
+      </header>
+
+      <div class="prose prose-invert prose-lg max-w-none prose-pre:bg-ink-900 prose-pre:border prose-pre:border-ink-800 prose-code:before:hidden prose-code:after:hidden">
+        <Content />
+      </div>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>

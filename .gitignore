@@ -1,0 +1,12 @@
+.DS_Store
+.env
+.env.*
+*.log
+
+# Generated site output and dependencies
+site/dist/
+site/.astro/
+site/node_modules/
+
+# Separate project repositories
+github-projects/

@@ -1,0 +1,87 @@
+---
+const roles = [
+  {
+    company: 'AnywhereNow',
+    title: 'Lead DevSecOps Engineer',
+    dates: 'Oct 2025 — Present',
+    highlights: [
+      'Own DevSecOps strategy across a multi-cloud estate; lead security-into-SDLC across 10+ engineering squads.',
+      'Built CI/CD pipeline templates with SAST, DAST, secret scanning, IaC testing, SBOM — ~60% drop in security findings reaching prod.',
+      'Container hardening + CVE reduction across 25+ services; ~65% drop in critical CVEs.',
+    ],
+  },
+  {
+    company: 'BMW',
+    title: 'Lead Ansible & Cloud Engineer',
+    dates: 'Jul 2024 — Sep 2025',
+    highlights: [
+      'Lead engineer for Ansible Automation Platform supporting 15+ teams and 200+ workloads.',
+      'Reusable Ansible collections + Terraform modules — onboarding from ~5 days to ~4 hours.',
+      'Automated patching + compliance — ~70% fewer unpatched critical vulns month-over-month.',
+    ],
+  },
+  {
+    company: 'Discovery (Vitality Global)',
+    title: 'Senior DevSecOps Engineer',
+    dates: 'Dec 2023 — Jun 2024',
+    highlights: [
+      'Automated shift-left security gates across 80+ repos (Snyk, Dependabot, Gitleaks).',
+      '~55% drop in vulnerabilities merged to main.',
+      '+18 point compliance posture score improvement.',
+    ],
+  },
+  {
+    company: 'Capitec Bank',
+    title: 'Cloud Security Engineer',
+    dates: 'Jul 2022 — Nov 2023',
+    highlights: [
+      'GitHub Actions + Terraform across 60+ cloud workloads, zero-downtime releases.',
+      'FinOps dashboards + automated remediation — ~R4m / year cost savings opportunities surfaced.',
+      'Prisma Cloud + Defender for Cloud governance through policy-as-code.',
+    ],
+  },
+  {
+    company: 'Absa Bank',
+    title: 'Cloud Security & DevOps Engineer',
+    dates: 'Jan 2016 — Jun 2022',
+    highlights: [
+      'Cloud security & automation pipelines across AWS + Azure for 300+ workloads.',
+      'ML-based anomaly detection — ~40% better alert signal-to-noise.',
+      'Terraform security patterns, SCPs, IAM baselines reused across 12+ business units.',
+    ],
+  },
+  {
+    company: 'Barclays Bank',
+    title: 'SQL DBA & Developer',
+    dates: '2010 — 2015',
+    highlights: [
+      'SQL automation, performance tuning, monitoring dashboards on mission-critical banking workloads.',
+    ],
+  },
+];
+---
+
+<section id="experience" class="container-page py-20 border-t border-ink-800/60">
+  <p class="section-eyebrow">// experience</p>
+  <h2 class="section-heading mb-10">Where I've worked.</h2>
+
+  <ol class="relative border-l border-ink-800 ml-2 sm:ml-4 space-y-10">
+    {roles.map((r) => (
+      <li class="pl-6 sm:pl-8">
+        <span class="absolute -left-[5px] mt-1.5 h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-ink-950"></span>
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+          <div>
+            <h3 class="text-lg font-semibold text-ink-50">{r.company}</h3>
+            <p class="text-accent text-sm font-mono">{r.title}</p>
+          </div>
+          <p class="font-mono text-xs text-ink-400 uppercase tracking-wider">{r.dates}</p>
+        </div>
+        <ul class="text-sm text-ink-300 space-y-1.5 mt-3">
+          {r.highlights.map((h) => (
+            <li class="flex gap-2"><span class="text-ink-600 mt-1.5">▪</span>{h}</li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ol>
+</section>

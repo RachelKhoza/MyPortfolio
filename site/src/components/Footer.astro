@@ -1,0 +1,16 @@
+---
+import { githubProfileUrl } from '../data/devopsProjects';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-ink-800 mt-auto">
+  <div class="container-page py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-500 font-mono">
+    <p>© {year} Rachel Khoza · Johannesburg, ZA</p>
+    <p>
+      Built with <a href="https://astro.build" class="hover:text-accent transition">Astro</a>,
+      deployed on <a href="https://www.netlify.com/" class="hover:text-accent transition">Netlify</a>,
+      active on <a href={githubProfileUrl} target="_blank" rel="noopener" class="hover:text-accent transition">GitHub</a>.
+    </p>
+  </div>
+</footer>
