@@ -1,6 +1,6 @@
 # rachelkhoza.dev — Portfolio
 
-Lead DevSecOps / Cloud Security Engineer portfolio. Static Astro site, Tailwind for styling, Markdown for blog content. Deploys as flat HTML to Netlify, GitHub Pages, Cloudflare Pages, or any static host.
+Lead DevSecOps / Cloud Security Engineer portfolio. Static Astro site, Tailwind for styling, Markdown for blog content. Deploys as flat HTML to Vercel.
 
 ## Stack
 
@@ -24,17 +24,16 @@ npm run build    # output: ./dist
 npm run preview  # serve ./dist locally
 ```
 
-## Deploy to Netlify
+## Deploy to Vercel
 
 1. Push this repo to GitHub (`github.com/RachelKhoza/MyPortfolio`).
-2. In Netlify -> **Add new site** -> **Import an existing project** -> connect the GitHub repo.
+2. In Vercel, import the GitHub repo or deploy from the linked local project.
 3. Build settings:
    - **Framework preset:** Astro
    - **Base directory:** `site`
    - **Build command:** `npm ci && npm run build`
-   - **Publish directory:** `dist` (Netlify resolves this inside the `site` base directory)
-4. Netlify will also read the root `netlify.toml`, which sets the same build values and security headers.
-5. Add a custom domain (`rachelkhoza.dev` or similar) in **Domain management** once the first deploy is green.
+   - **Output directory:** `dist`
+4. Custom domain: `rachelkhoza.com`.
 
 ## Deploy to GitHub Pages (alternative)
 
@@ -42,7 +41,7 @@ Push to `main`, then enable GitHub Pages with the `actions/deploy-pages` workflo
 
 ## Editing content
 
-- **Hero, About, Skills, Experience, Certs** — edit the components under `src/components/`
+- **Hero, About, Skills, Certs** — edit the components under `src/components/`
 - **DevOps project catalog** — edit `src/data/devopsProjects.ts`
 - **Homepage project preview** — edit `src/components/ProjectsSection.astro`
 - **Dedicated project page** — edit `src/pages/devops-projects.astro`
@@ -52,6 +51,6 @@ Push to `main`, then enable GitHub Pages with the `actions/deploy-pages` workflo
 
 This site doesn't need runtime secrets. The `.env.example` file shows the *pattern* for when you do — never commit `.env`. See the global-gitignore + `~/.zshenv` setup notes for how tokens live always-on without ever touching the repo.
 
-## Updating the CV
+## CV
 
-The CV PDF lives in `public/RachelKhoza_CV.pdf` and is linked from the Hero "Download CV" button. Drop a new PDF with the same name to update; no other changes needed.
+The public portfolio does not link or publish a CV PDF.

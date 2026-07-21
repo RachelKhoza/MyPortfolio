@@ -83,13 +83,13 @@
     },
     {
       "name": "Azure Security Engineer Associate",
-      "issuer": "Azure",
+      "issuer": "Microsoft",
       "year": "2023",
       "credentialId": "AZ-500-2023-789"
     },
     {
-      "name": "Azure Fundementals",
-      "issuer": "Azure",
+      "name": "Microsoft Azure Fundamentals",
+      "issuer": "Microsoft",
       "year": "2022",
       "credentialId": "CISM-2022-123"
     }
