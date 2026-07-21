@@ -22,7 +22,7 @@
   ],
   "experience": [
     {
-      "company": "BMW IT HUB",
+      "company": "Enterprise Automotive Platform",
       "position": "Senior Ansible Ops Engineer",
       "duration": "2023 - Present",
       "description": "Lead Devops initiatives for enterprise clients, implementing secure CI/CD pipelines and cloud infrastructure automation.",
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "company": "Discovery Vitality Global.",
+      "company": "Global Wellness Platform",
       "position": "DevSecOps Engineer",
       "duration": "2021 - 2023",
       "description": "Developed and maintained secure cloud infrastructure using Infrastructure as Code principles.",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "company": "Capitec Bank ",
+      "company": "Retail Banking Platform",
       "position": "Cloud Security Developer",
       "duration": "2020 - 2021",
       "description": "Developed Python-based security tools and automation scripts for threat detection and response in AWS.",
@@ -71,25 +71,25 @@
   "certifications": [
     {
       "name": "AWS Certified Security - Specialty",
-      "issuer": "Amazon Web Services",
+      "issuer": "AWS",
       "year": "2024",
       "credentialId": "AWS-CSS-2024-001"
     },
     {
       "name": "AWS Solution Architect Associate",
-      "issuer": "Amazon Web Services",
+      "issuer": "AWS",
       "year": "2023",
       "credentialId": "CKS-2023-456"
     },
     {
       "name": "Azure Security Engineer Associate",
-      "issuer": "Microsoft",
+      "issuer": "Azure",
       "year": "2023",
       "credentialId": "AZ-500-2023-789"
     },
     {
       "name": "Azure Fundementals",
-      "issuer": "Microsoft",
+      "issuer": "Azure",
       "year": "2022",
       "credentialId": "CISM-2022-123"
     }
